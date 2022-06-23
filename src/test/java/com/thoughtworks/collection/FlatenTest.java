@@ -7,7 +7,7 @@ import java.util.List;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
-public class FlatenTest {
+public class  FlatenTest {
 
     @Test
     public void can_transform_two_dimensional_array_to_one() {
