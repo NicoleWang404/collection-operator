@@ -1,31 +1,58 @@
 package com.thoughtworks.collection;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-import java.util.List;
-import java.util.Map;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class Filter {
 
-    List<Integer>  array;
+    List<Integer> array;
 
     public Filter(List<Integer> array) {
-     this.array = array;
+        this.array = array;
     }
 
     public List<Integer> filterEven() {
-        throw new NotImplementedException();
+        List<Integer> resultList = new ArrayList<>();
+        for (int i = 0; i < array.size(); i++) {
+            if (array.get(i) % 2 == 0) {
+                resultList.add(array.get(i));
+            }
+        }
+        return resultList;
     }
 
     public List<Integer> filterMultipleOfThree() {
-        throw new NotImplementedException();
+        List<Integer> tripleList = new ArrayList<>();
+        for (int i = 0; i < array.size(); i++) {
+            if (array.get(i) % 3 == 0) {
+                tripleList.add(array.get(i));
+            }
+        }
+        return tripleList;
     }
 
     public List<Integer> getCommonElements(List<Integer> firstList, List<Integer> secondList) {
-        throw new NotImplementedException();
+        List<Integer> commonList = new ArrayList<>();
+        for (int i = 0; i < firstList.size(); i++) {
+            for (int j = 0; j < secondList.size(); j++) {
+                if (firstList.get(i) == secondList.get(j)) {
+                    commonList.add(firstList.get(i));
+                }
+            }
+        }
+        return commonList;
     }
 
     public List<Integer> getDifferentElements() {
-        throw new NotImplementedException();
+
+        List<Integer> resultList = new ArrayList<>(array.size());
+        for (int i = 0; i < array.size(); i++) {
+            Integer result = array.get(i);
+            if (!resultList.contains(result)) {
+                resultList.add(result);
+            }
+        }
+        return resultList;
     }
 }
